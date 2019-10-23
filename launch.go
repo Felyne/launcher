@@ -104,5 +104,5 @@ func getAddr(port string) (addr string) {
 
 //获取etcd上注册的服务名
 func GetServiceName(envName, serviceName string) string {
-	return envName + "/" + serviceName
+	return envName + "-" + serviceName
 }
