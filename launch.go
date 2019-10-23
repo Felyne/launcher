@@ -63,7 +63,7 @@ func run(serviceName, version, envName, portStr string, etcdAddrs []string, setu
 	})
 
 	options := []micro.Option{
-		micro.Name(GetServiceName(envName, serviceName)),
+		micro.Name(GetServiceRegName(envName, serviceName)),
 		micro.Registry(reg),
 	}
 	listenAddr := getAddr(portStr)
@@ -103,6 +103,6 @@ func getAddr(port string) (addr string) {
 }
 
 //获取etcd上注册的服务名
-func GetServiceName(envName, serviceName string) string {
+func GetServiceRegName(envName, serviceName string) string {
 	return envName + "." + serviceName
 }
