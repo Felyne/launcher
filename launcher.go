@@ -1,4 +1,4 @@
-package service_launch
+package launcher
 
 import (
 	"fmt"
@@ -7,7 +7,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/Felyne/config_center"
+	"github.com/Felyne/configcenter"
 	"github.com/micro/go-micro"
 
 	"github.com/coreos/etcd/clientv3"
@@ -51,7 +51,7 @@ func run(serviceName, version, envName, portStr string, etcdAddrs []string, setu
 		return err
 	}
 
-	cc := config_center.New(cli, envName)
+	cc := configcenter.New(cli, envName)
 	cfgContent, err := cc.GetConfig(serviceName)
 	if err != nil {
 		return err
@@ -65,6 +65,8 @@ func run(serviceName, version, envName, portStr string, etcdAddrs []string, setu
 	options := []micro.Option{
 		micro.Name(GetServiceRegName(envName, serviceName)),
 		micro.Registry(reg),
+		micro.RegisterTTL(10*time.Second),
+		micro.RegisterInterval(5*time.Second),
 	}
 	listenAddr := getAddr(portStr)
 	if listenAddr != "" {
