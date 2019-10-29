@@ -17,7 +17,6 @@ import (
 	"github.com/micro/go-plugins/registry/etcdv3"
 )
 
-//微服务启动函数
 type SetupFunc func(s server.Server, cfgContent string) error
 
 // example: ./server dev 0 localhost:2379
