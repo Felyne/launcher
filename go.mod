@@ -3,7 +3,7 @@ module github.com/Felyne/launcher
 go 1.12
 
 require (
-	github.com/Felyne/configcenter v1.0.3
+	github.com/Felyne/configcenter v1.0.4
 	github.com/armon/circbuf v0.0.0-20190214190532-5111143e8da2 // indirect
 	github.com/armon/go-radix v1.0.0 // indirect
 	github.com/containerd/continuity v0.0.0-20190426062206-aaeac12a7ffc // indirect

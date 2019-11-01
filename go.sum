@@ -57,8 +57,8 @@ github.com/BurntSushi/xgb v0.0.0-20160522181843-27f122750802/go.mod h1:IVnqGOEym
 github.com/DataDog/datadog-go v2.2.0+incompatible/go.mod h1:LButxg5PwREeZtORoXG3tL4fMGNddJ+vMq1mwgfaqoQ=
 github.com/DataDog/zstd v1.3.6-0.20190409195224-796139022798/go.mod h1:1jcaCB/ufaK+sKp1NBhlGmpz41jOoPQ35bpF36t7BBo=
 github.com/DataDog/zstd v1.4.1/go.mod h1:1jcaCB/ufaK+sKp1NBhlGmpz41jOoPQ35bpF36t7BBo=
-github.com/Felyne/configcenter v1.0.3 h1:OJf/cKuMsD9Apa+QxeUtrp5OIKjbNy1P8N5RoSk/52w=
-github.com/Felyne/configcenter v1.0.3/go.mod h1:ajA/nm9QJw0OmBrF53IDCnJfB9qSUMgrMl2TvZRFiGA=
+github.com/Felyne/configcenter v1.0.4 h1:GtxocxqsNIjlTo+QuwMvZOAYXg/oDzLfvgElqGH4sm0=
+github.com/Felyne/configcenter v1.0.4/go.mod h1:ajA/nm9QJw0OmBrF53IDCnJfB9qSUMgrMl2TvZRFiGA=
 github.com/GoogleCloudPlatform/cloudsql-proxy v0.0.0-20190418212003-6ac0b49e7197/go.mod h1:aJ4qN3TfrelA6NZ6AXsXRfmEVaYin3EDbSPJrKS8OXo=
 github.com/GoogleCloudPlatform/cloudsql-proxy v0.0.0-20190605020000-c4ba1fdf4d36/go.mod h1:aJ4qN3TfrelA6NZ6AXsXRfmEVaYin3EDbSPJrKS8OXo=
 github.com/Microsoft/go-winio v0.4.13/go.mod h1:qXqCSQ3Xa7+6tgxaGTIe4Kpcdsi+P8jBhyzoq1bpyYA=

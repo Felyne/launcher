@@ -41,7 +41,9 @@ func Run(serviceName, version, buildTime string, setup SetupFunc) {
 }
 
 //根据env和serviceName从etcd获取配置，服务启动后服务信息注册到etcd
-func run(serviceName, version, envName, portStr string, etcdAddrs []string, setup SetupFunc) error {
+func run(serviceName, version, envName, portStr string,
+	etcdAddrs []string, setup SetupFunc) error {
+
 	cli, err := clientv3.New(clientv3.Config{
 		Endpoints:   etcdAddrs,
 		DialTimeout: 15 * time.Second,
@@ -62,7 +64,7 @@ func run(serviceName, version, envName, portStr string, etcdAddrs []string, setu
 	})
 
 	options := []micro.Option{
-		micro.Name(GetServiceRegName(envName, serviceName)),
+		micro.Name(GenServiceRegName(envName, serviceName)),
 		micro.Registry(reg),
 		micro.RegisterTTL(10*time.Second),
 		micro.RegisterInterval(5*time.Second),
@@ -103,7 +105,7 @@ func getAddr(port string) (addr string) {
 	return
 }
 
-//获取etcd上注册的服务名
-func GetServiceRegName(envName, serviceName string) string {
+//生成服务的注册名
+func GenServiceRegName(envName, serviceName string) string {
 	return envName + "." + serviceName
 }
