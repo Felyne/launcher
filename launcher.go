@@ -107,5 +107,5 @@ func getAddr(port string) (addr string) {
 
 //生成服务的注册名
 func GenServiceRegName(envName, serviceName string) string {
-	return envName + "." + serviceName
+	return envName + ".service." + serviceName
 }
