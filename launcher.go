@@ -13,11 +13,10 @@ import (
 	"github.com/coreos/etcd/clientv3"
 
 	"github.com/micro/go-micro/registry"
-	"github.com/micro/go-micro/server"
 	"github.com/micro/go-plugins/registry/etcdv3"
 )
 
-type SetupFunc func(s server.Server, cfgContent string) error
+type SetupFunc func(service micro.Service, cfgContent string) error
 
 // example: ./server dev 0 localhost:2379
 func Run(serviceName, version, buildTime string, setup SetupFunc) {
@@ -79,7 +78,7 @@ func run(serviceName, version, envName, portStr string,
 
 	service := micro.NewService(options...)
 	service.Init()
-	if err := setup(service.Server(), cfgContent); err != nil {
+	if err := setup(service, cfgContent); err != nil {
 		return err
 	}
 
