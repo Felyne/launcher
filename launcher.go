@@ -16,7 +16,7 @@ import (
 	"github.com/micro/go-plugins/registry/etcdv3"
 )
 
-type SetupFunc func(service micro.Service, cfgContent string) error
+type SetupFunc func(service micro.Service, envName, cfgContent string) error
 
 // example: ./server dev 0 localhost:2379
 func Run(serviceName, version, buildTime string, setup SetupFunc) {
@@ -78,7 +78,7 @@ func run(serviceName, version, envName, portStr string,
 
 	service := micro.NewService(options...)
 	service.Init()
-	if err := setup(service, cfgContent); err != nil {
+	if err := setup(service, envName, cfgContent); err != nil {
 		return err
 	}
 
